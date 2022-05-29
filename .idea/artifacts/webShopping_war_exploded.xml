@@ -13,6 +13,26 @@
         <element id="directory" name="classes">
           <element id="module-output" name="webShopping" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: com.alipay.sdk:alipay-easysdk:2.2.0" />
+          <element id="library" level="project" name="Maven: com.alipay.sdk:easysdk-kernel:1.0.8" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.25" />
+          <element id="library" level="project" name="Maven: com.aliyun:tea:1.0.7" />
+          <element id="library" level="project" name="Maven: com.squareup.okhttp3:okhttp:3.8.1" />
+          <element id="library" level="project" name="Maven: com.squareup.okio:okio:1.13.0" />
+          <element id="library" level="project" name="Maven: org.jacoco:org.jacoco.agent:runtime:0.8.4" />
+          <element id="library" level="project" name="Maven: com.google.guava:guava:28.1-jre" />
+          <element id="library" level="project" name="Maven: com.google.guava:failureaccess:1.0.1" />
+          <element id="library" level="project" name="Maven: com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava" />
+          <element id="library" level="project" name="Maven: com.google.code.findbugs:jsr305:3.0.2" />
+          <element id="library" level="project" name="Maven: org.checkerframework:checker-qual:2.8.1" />
+          <element id="library" level="project" name="Maven: com.google.errorprone:error_prone_annotations:2.3.2" />
+          <element id="library" level="project" name="Maven: com.google.j2objc:j2objc-annotations:1.3" />
+          <element id="library" level="project" name="Maven: org.codehaus.mojo:animal-sniffer-annotations:1.18" />
+          <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.8.6" />
+          <element id="library" level="project" name="Maven: org.bouncycastle:bcprov-jdk15on:1.64" />
+          <element id="library" level="project" name="Maven: org.projectlombok:lombok:1.18.20" />
+        </element>
       </element>
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/target/demo-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
