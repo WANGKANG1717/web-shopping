@@ -1,6 +1,6 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<%@ page contentType="text/html;charset=UTF-8"%>
 <%@ page import="java.util.Calendar" %>
+<jsp:useBean id="user" scope="session" class="com.example.javaWeb.entity.User"/>
 
 <table border=0 cellpadding=0 cellspacing=0>
     <tr>
@@ -13,7 +13,6 @@
         <td>
             <div id="left_login">
                 <img src="images/vip_logo.png"/><br><br>
-                <jsp:useBean id="user" scope="session" class="com.example.javaWeb.entity.User"/>
                 <%
                     String userName = null;
                     if (user != null) {
@@ -38,18 +37,19 @@
                     Calendar cal = Calendar.getInstance();
                     int hour = cal.get(Calendar.HOUR_OF_DAY);
                     if (hour >= 5 && hour < 8) {
-                        out.print("<span style='color:red'>早上好!&nbsp;" + userName + "</span>");
+                        out.print("<span style='color:red'>早上好!&nbsp;");
                     } else if (hour >= 8 && hour < 11) {
-                        out.print("<span style='color:red'>上午好!&nbsp;" + userName + "</span>");
+                        out.print("<span style='color:red'>上午好!&nbsp;");
                     } else if (hour >= 11 && hour < 13) {
-                        out.print("<span style='color:red'>中午好!&nbsp;" + userName + "</span>");
+                        out.print("<span style='color:red'>中午好!&nbsp;");
                     } else if (hour >= 13 && hour < 18) {
-                        out.print("<span style='color:red'>下午好!&nbsp;" + userName + "</span>");
+                        out.print("<span style='color:red'>下午好!&nbsp;");
                     } else if (hour >= 18 && hour < 23) {
-                        out.print("<span style='color:red'>晚上好!&nbsp;" + userName + "</span>");
+                        out.print("<span style='color:red'>晚上好!&nbsp;");
                     } else {
-                        out.print("<span style='color:red'>夜深啦!&nbsp;" + userName + "</span>");
+                        out.print("<span style='color:red'>夜深啦!&nbsp;");
                     }
+                    out.print("<a class='li2' href='person.jsp'> "+userName + " </a></span>");
                 %>
                 <br><br>
                 <form action="user" method="post">
@@ -181,4 +181,14 @@
         <td valign=top width=4 height=4><img height=4 src="images/line_08.gif" width=4></td>
     </tr>
 </table>
+<style>
+    .li2 {
+        font-size: 14px;
+        color: #666666;
+        font-weight: bold;
+        text-decoration: none;
+        max-width: 150px;
+        overflow: hidden;
+    }
+</style>
 

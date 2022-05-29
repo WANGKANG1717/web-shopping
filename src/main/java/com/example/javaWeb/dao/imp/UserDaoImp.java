@@ -22,6 +22,7 @@ public class UserDaoImp implements UserDao {
 
     //转换形式，将数组转换为字符串
     public static String toString(String[] object) {
+        if(object==null) return null;
         String res = "";
         for (int i = 0; i < object.length - 1; i++) {
             res += object[i];

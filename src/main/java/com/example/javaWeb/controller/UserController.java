@@ -29,6 +29,8 @@ public class UserController extends HttpServlet {
             doRegister(req, resp);
         } else if ("exit".equals(method)) {
             getExit(req, resp);
+        } else if ("update".equals(method)) {
+            updateUser(req, resp);
         }
     }
 
@@ -133,12 +135,45 @@ public class UserController extends HttpServlet {
         HttpSession session = request.getSession();
         session.invalidate();
         String userID = request.getParameter("userID");
+        //
         userService.Exit(userID);
         try {
             request.getRequestDispatcher("/index.jsp").forward(request, response);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void updateUser(HttpServletRequest request, HttpServletResponse response) {
+        response.setContentType("text/html;charset=utf-8");
+        System.out.println("updateUser");
+        String userID = request.getParameter("id");
+        String userName = request.getParameter("username");
+        String oldPasswd = request.getParameter("oldPasswd");
+        String newPasswd = request.getParameter("newPasswd");
+        String sex = request.getParameter("sex");
+        String[] hobby = request.getParameterValues("hobby");
+//        System.out.println(userID+" "+ userName+" "+oldPasswd+" "+newPasswd+" "+sex+" ");
+        //
+        String updateMsg=null;
+        boolean flag=userService.update(new User(Integer.parseInt(userID), userName, newPasswd, sex, hobby), oldPasswd);
+        if(flag==true) {
+            updateMsg="恭喜，更新信息成功。";
+        }
+        else {
+            updateMsg="更新失败，请检查表单。";
+        }
+
+        User user=userService.getUserById(userID);
+
+        request.getSession().setAttribute("user", user);
+        request.getSession().setAttribute("updateMsg", updateMsg);
+
+        try {
+            request.getRequestDispatcher("/person.jsp").forward(request, response);
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

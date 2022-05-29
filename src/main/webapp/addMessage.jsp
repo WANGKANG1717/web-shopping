@@ -30,7 +30,6 @@
             if (user == null || user.getName() == null || user.getName().equals("")) { %>
         请先登录
         <% } else {
-                System.out.print(messageAddInfo+"dadsd");
             if (messageAddInfo != null && !messageAddInfo.equals("")) {
                 if(messageAddInfo.equals("addSuccess")) {
                     out.print("恭喜，留言成功，请返回。");
@@ -43,7 +42,7 @@
             <form action="message" method="post">
                 <input type="text" name="method" value="add" style="display: none">
                 <input type="text" name="userID" value="<%=user.getId()%>" style="display: none">
-                <textarea name="msgContent" cols="93" rows="25" style="font-size: 15px; padding: 10px"></textarea>
+                <textarea name="msgContent" cols="93" rows="25" style="font-size: 15px; padding: 10px"></textarea><br>
                 <input type="submit" value="提交" style="float:right; margin-top: 10px">
             </form>
         <% }} %>

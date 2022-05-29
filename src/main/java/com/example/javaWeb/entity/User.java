@@ -28,6 +28,14 @@ public class User {
         this.hobby = hobby;
     }
 
+    public User(Integer id, String name, String passwd, String sex, String[] hobby) {
+        this.id = id;
+        this.name = name;
+        this.passwd = passwd;
+        this.sex = sex;
+        this.hobby = hobby;
+    }
+
     public Integer getId() { return id; }
 
     public void setId(Integer id) { this.id = id; }

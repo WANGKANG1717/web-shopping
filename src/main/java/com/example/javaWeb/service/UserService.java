@@ -13,5 +13,10 @@ public interface UserService {
 
     public User Login(String username, String password);
 
+    public User getUserById(String userID);
+
     public boolean Exit(String userID);
+
+    public boolean update(User user, String oldPassword);
+
 }

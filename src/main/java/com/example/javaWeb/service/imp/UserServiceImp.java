@@ -31,6 +31,11 @@ public class UserServiceImp implements UserService {
     }
 
     @Override
+    public User getUserById(String userID) {
+        return userDao.getById(userID);
+    }
+
+    @Override
     public boolean Exit(String userID) {
         boolean flag=false;
         User user=userDao.getById(userID);
@@ -40,5 +45,26 @@ public class UserServiceImp implements UserService {
             flag=userDao.update(user);
         }
         return flag;
+    }
+
+    @Override
+    public boolean update(User user, String oldPassword) {
+        User userOld=userDao.getById(user.getId().toString());
+        if(!userOld.getPasswd().equals(oldPassword)) {
+//            System.out.println("这里有问题1");
+            return false;
+        }
+        else {
+//            System.out.println("这里有问题2");
+            //更新用户信息
+            userOld.setName(user.getName());
+            //新密码为空则表示不更改密码
+            if(user.getPasswd()!=null && !user.getPasswd().equals("")) {
+                userOld.setPasswd(user.getPasswd());
+            }
+            userOld.setSex(user.getSex());
+            userOld.setHobby(user.getHobby());
+            return userDao.update(userOld);
+        }
     }
 }

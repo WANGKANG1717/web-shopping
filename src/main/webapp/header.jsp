@@ -23,10 +23,11 @@
         } else {
             byte a[] = userName.getBytes("utf-8");
             userName = new String(a);
-            out.print("" + userName + "，<span style='color:red'>欢迎光临!</span>");
+            out.print("<a class='li2' href='person.jsp'> "+ userName + "</a><span class='li3'>&nbsp;&nbsp;欢迎光临!</span>");
         }
     %>
     <br>
+    <a class="li"></a>
     <img src="images/chat.png"/>&nbsp;<a target="_blank" href="https://kang17.xyz" style="cursor:hand">联系我们</a> <img
         src="images/order.png"/>&nbsp;<a href="shoppingCart?userID=<%=user.getId()%>&method=get">购物车</a>
 </div>
@@ -83,3 +84,19 @@
         <input type='submit' value='搜索'>
     </form>
 </div>
+
+<style>
+    .li2 {
+        font-size: 14px;
+        color: #666666;
+        font-weight: bold;
+        text-decoration: none;
+        max-width: 150px;
+        overflow: hidden;
+    }
+    .li3 {
+        font-size: 14px;
+        color: red;
+        text-decoration: none;
+    }
+</style>

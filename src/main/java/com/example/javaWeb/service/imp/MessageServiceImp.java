@@ -6,10 +6,13 @@ import com.example.javaWeb.dao.imp.MessageDaoImp;
 import com.example.javaWeb.dao.imp.UserDaoImp;
 import com.example.javaWeb.entity.Message;
 import com.example.javaWeb.entity.MessageInfo;
+import com.example.javaWeb.entity.Product;
 import com.example.javaWeb.entity.User;
 import com.example.javaWeb.service.MessageService;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Comparator;
 
 /**
  * @Author: WK kang17.xyz
@@ -50,6 +53,14 @@ public class MessageServiceImp implements MessageService {
     @Override
     public ArrayList<MessageInfo> getMessages(Integer page, Integer limit) {
         ArrayList<Message> messages = messageDao.getAll();
+        //
+        Comparator<Message> timeSort = new Comparator<Message>() {
+            @Override
+            public int compare(Message o1, Message o2) {
+                return -1*o1.getPtime().compareTo(o2.getPtime());
+            }
+        };
+        messages.sort(timeSort);
         //
         ArrayList<MessageInfo> messageInfos = new ArrayList<>();
         UserDao userDao = new UserDaoImp();
@@ -93,7 +104,7 @@ public class MessageServiceImp implements MessageService {
         if (message.getmID() != null) {
             messageTo = messageDao.getById(message.getmID());
             if (messageTo != null) {
-                userTo = userDao.getById(message.getuID());
+                userTo = userDao.getById(messageTo.getuID());
                 messageInfoPair.add(new MessageInfo(userTo, messageTo));
             }
         }
