@@ -1,8 +1,9 @@
 # WebShopping
 
-开发工具：IDEA
-数据库：mysql8.0
-DBMS：Navicat15
+- 开发工具：IDEA
+
+- 数据库：mysql8.0
+- DBMS：Navicat15
 
 ## 实现功能（2022/05/29）
 
