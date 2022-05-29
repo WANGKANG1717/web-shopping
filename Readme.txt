@@ -11,7 +11,7 @@ DBMS：Navicat15
 	商品模糊搜索
 	通知公告（详情、分页）
 	留言（删除、分页、添加、详情、回复）
-	个人中心
+	个人中心（信息查看、修改）
 
 	后端：
 	后端分层（Entity、Dao、Service、Controller）
