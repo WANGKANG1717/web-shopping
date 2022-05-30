@@ -105,10 +105,10 @@
                 <div>
                     <dl class="show"></dl>
                     <dl class="">
-                        <dt><a href="#"><img src="images/asw.jpg" alt="爱尚网扇品"></a></dt>
+                        <dt><a href="#"><img src="images/summer.jpg" alt="清爽夏日"></a></dt>
                     </dl>
                     <dl class="">
-                        <dt><a href="#"><img src="images/summer.jpg" alt="清爽夏日"></a></dt>
+                        <dt><a href="#"><img src="images/asw.jpg" alt="爱尚网扇品"></a></dt>
                     </dl>
                 </div>
             </div>

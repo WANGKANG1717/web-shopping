@@ -67,7 +67,7 @@ a {
     display: block;
 }
 
-#left_sort {
+#left_sort2 {
     width: 190px;
     text-align: center;
     float: left;
@@ -79,7 +79,7 @@ a {
     width: 596px;
     float: right;
     clear: right;
-    display: hidden;
+    display: none;
     margin-top: 10px;
 }
 
@@ -94,7 +94,7 @@ a {
 }
 
 #sort ul {
-    float: center;
+    float: inherit;
     list-style: none;
     margin: 0px;
 }

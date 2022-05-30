@@ -24,7 +24,6 @@ body {
 }
 
 #header {
-    float: center;
     width: 950px;
     height: 150px;
 }
@@ -237,7 +236,7 @@ body {
     text-decoration: underline;
 }
 
-.li_sort:actived {
+.li_sort:active {
     font-size: 14px;
     color: #696969;
     font-weight: bold;
@@ -259,7 +258,7 @@ body {
     text-decoration: underline;
 }
 
-.hot:actived {
+.hot:active {
     color: black;
     text-decoration: none;
 }
@@ -282,7 +281,7 @@ body {
     text-decoration: none;
 }
 
-.sql_more:actived {
+.sql_more:active {
     font-size: 13px;
     color: black;
     text-decoration: none;
@@ -420,7 +419,7 @@ body {
     text-decoration: none;
 }
 
-.pageLink:actived {
+.pageLink:active {
     color: black;
     text-decoration: none;
 }

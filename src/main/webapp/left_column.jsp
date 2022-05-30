@@ -81,9 +81,9 @@
     <tr>
         <td background=images/line_04.gif></td>
         <td>
-            <div id="left_sort">
+            <div class="left_sort">
                 <img src="images/sort_logo.png"/><br><br>
-                <div id="sort_menu">
+                <div class="sort_menu">
                     <ul id="menu">
                         <li><img src="images/sort_menu.gif"/>&nbsp;&nbsp;
                             <a class="li_sort" href="product?page=1&limit=6&category=日式女扇&method=getAll">
@@ -126,9 +126,9 @@
     <tr>
         <td background=images/line_04.gif></td>
         <td>
-            <div id="left_sort">
+            <div class="left_sort">
                 <img src="images/contact_logo.png"/><br><br>
-                <div id="sort_menu">
+                <div class="sort_menu">
                     贝壳：
                     <a target="_blank"
                        href="https://kang17.xyz/about">
@@ -168,7 +168,7 @@
     <tr>
         <td background=images/line_04.gif></td>
         <td>
-            <div id="left_sort">
+            <div class="left_sort">
                 <img src="images/sale_logo.png"/><br><br>
                 <div id="sale_sql_more"><a class="sql_more" href="product?page=1&limit=6&category=&method=getAll">查看更多商品</a></div>
             </div>
