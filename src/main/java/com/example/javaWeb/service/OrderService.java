@@ -1,6 +1,9 @@
 package com.example.javaWeb.service;
 
 import com.example.javaWeb.entity.Order;
+import com.example.javaWeb.entity.Product;
+
+import java.util.ArrayList;
 
 /**
  * @Author: WK kang17.xyz
@@ -9,7 +12,7 @@ import com.example.javaWeb.entity.Order;
  * @Description: ©WK
  */
 public interface OrderService {
-    String addOrder(String userID, String productID, Integer num, Double singlePrice);
+    void addOrder(String userID, ArrayList<Product> products);
 
     boolean updateOrderStatus(String id, String status);
 

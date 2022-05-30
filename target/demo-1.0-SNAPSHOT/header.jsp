@@ -55,11 +55,11 @@
             </form>
         </li>
         <li>
-            <a class="li" href="#"><img src="images/dh_4.png" border="0 "/>&nbsp;付款方式</a>
+            <a class="li" href="#"><img src="images/dh_4.png" border="0 "/>&nbsp;我的订单</a>
         </li>
 
         <li>
-            <a class="li" href="https://kang17.xyz" target="_blank"><img src="images/dh_5.png" border="0 "/>&nbsp;关于我们</a>
+            <a class="li" href="https://kang17.xyz/about/" target="_blank"><img src="images/dh_5.png" border="0 "/>&nbsp;关 于 我</a>
         </li>
 
         <li>
