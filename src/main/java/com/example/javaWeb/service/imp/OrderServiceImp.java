@@ -1,5 +1,6 @@
 package com.example.javaWeb.service.imp;
 
+import cn.hutool.core.util.IdUtil;
 import com.example.javaWeb.dao.OrderDao;
 import com.example.javaWeb.dao.imp.OrderDaoImp;
 import com.example.javaWeb.entity.Order;
@@ -18,24 +19,25 @@ import java.util.Random;
 public class OrderServiceImp implements OrderService {
     OrderDao orderDao = new OrderDaoImp();
 
-    public static String getRandomNumber(int length) {
-        String str = "0123456789";
-        Random random = new Random();
-        StringBuffer sb = new StringBuffer();
-        for (int i = 0; i < length; i++) {
-            int number = random.nextInt(10);
-            sb.append(str.charAt(number));
-        }
-        return sb.toString();
+    @Override
+    public boolean addOrder(String userID, Product product) {
+            //hutool生成订单号
+            String id = IdUtil.getSnowflake().nextIdStr();
+            Order order = new Order(id, userID, product.getId().toString(), product.getName(), product.getNum(), product.getPro_price()*product.getNum());
+            return orderDao.add(order);
     }
 
     @Override
-    public void addOrder(String userID, ArrayList<Product> products) {
-        String id = getRandomNumber(15);
+    public void addOrders(String userID, ArrayList<Product> products) {
         for (int i = 0; i < products.size(); i++) {
             Product product = products.get(i);
-            Order order = new Order(id, userID, product.getId().toString(), product.getNum(), product.getTotal_price());
+            //hutool生成订单号
+            String id = IdUtil.getSnowflake().nextIdStr();
+            Order order = new Order(id, userID, product.getId().toString(), product.getName(),  product.getNum(),product.getPro_price()*product.getNum());
             if (orderDao.add(order)) {
+                System.out.println("Order -> product  " + i + "  添加成功");
+            }
+            else {
                 System.out.println("Order -> product  " + i + "  添加失败");
             }
         }
@@ -49,5 +51,15 @@ public class OrderServiceImp implements OrderService {
     @Override
     public Order getOrderById(String id) {
         return orderDao.get(id);
+    }
+
+    @Override
+    public ArrayList<Order> getOrdersByUserId(String userID, String status) {
+        return orderDao.getAll(userID, status);
+    }
+
+    @Override
+    public boolean deleteOrderById(String id) {
+        return orderDao.delete(id);
     }
 }

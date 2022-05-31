@@ -12,9 +12,15 @@ import java.util.ArrayList;
  * @Description: ©WK
  */
 public interface OrderService {
-    void addOrder(String userID, ArrayList<Product> products);
+    boolean addOrder(String userID, Product product);
+
+    void addOrders(String userID, ArrayList<Product> products);
 
     boolean updateOrderStatus(String id, String status);
 
     Order getOrderById(String id);
+
+    ArrayList<Order> getOrdersByUserId(String userID, String status);
+
+    boolean deleteOrderById(String id);
 }

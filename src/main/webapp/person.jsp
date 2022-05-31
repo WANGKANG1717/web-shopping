@@ -74,6 +74,8 @@
                     <div class="div_my2">兴趣：</div>
                          <input type="checkbox" name="hobby" value="爬山" <%=getHobby(user.getHobby(), "爬山")%>>爬山
                          <input type="checkbox" name="hobby" value="钓鱼" <%=getHobby(user.getHobby(), "钓鱼")%>>钓鱼<br>
+                    <div class="div_my2">余额：</div>
+                    <input type="text" value="<%=user.getBalance()%>" style="margin-top: 10px" disabled> <br/>
                     <input type="submit" value="修改" style="margin-top: 10px">
                     </table>
                 </form>

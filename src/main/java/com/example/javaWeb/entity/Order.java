@@ -12,6 +12,7 @@ public class Order {
     String id;
     String userID;
     String productID;
+    String productName;
     Integer num;
     Double totalPrice;
     LocalDateTime tradeTime;
@@ -19,10 +20,11 @@ public class Order {
 
     public Order() {}
 
-    public Order(String id, String userID, String productID, Integer num, Double totalPrice) {
+    public Order(String id, String userID, String productID, String productName, Integer num, Double totalPrice) {
         this.id = id;
         this.userID = userID;
         this.productID = productID;
+        this.productName=productName;
         this.num = num;
         this.totalPrice = totalPrice;
     }
@@ -49,6 +51,14 @@ public class Order {
 
     public void setProductID(String productID) {
         this.productID = productID;
+    }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
     public Integer getNum() {
@@ -81,5 +91,19 @@ public class Order {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id='" + id + '\'' +
+                ", userID='" + userID + '\'' +
+                ", productID='" + productID + '\'' +
+                ", productName='" + productName + '\'' +
+                ", num=" + num +
+                ", totalPrice=" + totalPrice +
+                ", tradeTime=" + tradeTime +
+                ", status='" + status + '\'' +
+                '}';
     }
 }

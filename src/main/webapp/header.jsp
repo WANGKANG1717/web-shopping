@@ -55,7 +55,12 @@
             </form>
         </li>
         <li>
-            <a class="li" href="#"><img src="images/dh_4.png" border="0 "/>&nbsp;我的订单</a>
+            <form action="order" method="post" name="getAllOrder">
+                <input type="hidden" name="method" value="getAll">
+                <input type="hidden" name="userID" value="<%=user.getId()%>">
+                <a class="li" href="javascript:document.getAllOrder.submit()"><img src="images/dh_4.png" border="0 "/>&nbsp;我的订单</a>
+            </form>
+<%--            <a class="li" href="#"><img src="images/dh_4.png" border="0 "/>&nbsp;我的订单</a>--%>
         </li>
 
         <li>

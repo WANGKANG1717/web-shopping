@@ -13,6 +13,9 @@
         <element id="directory" name="classes">
           <element id="module-output" name="webShopping" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: cn.hutool:hutool-all:5.7.11" />
+        </element>
       </element>
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/target/demo-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />

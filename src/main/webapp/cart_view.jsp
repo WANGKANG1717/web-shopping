@@ -16,11 +16,47 @@
             // console.log(checkBoxs[i].value);
             checkBoxs[i].checked=flag;
         }
+        alterTotalPrice();
     }
+
+    function toCheck() {
+        var checkAll = document.getElementById("selectAll");
+        var checkBoxs = document.getElementsByName("proCheck");
+        //
+        var cnt = 0;
+        for (var i = 0; i < checkBoxs.length; i++) {
+            if (checkBoxs[i].checked == true) {
+                cnt++;
+            }
+        }
+        if (checkBoxs.length > 0 && cnt == checkBoxs.length) {
+            checkAll.checked = true;
+        }
+        else {
+            checkAll.checked = false;
+        }
+        alterTotalPrice();
+    }
+
+    function alterTotalPrice() {
+        var checkBoxs = document.getElementsByName("proCheck");
+        var proToPrice = document.getElementsByName("proToPrice");
+        var totalPrice = document.getElementById("totalPrice");
+        var sum = 0;
+        for (var i = 0; i < checkBoxs.length; i++) {
+            if (checkBoxs[i].checked == true) {
+                // console.log(proToPrice[i].innerHTML);
+                sum += parseFloat(proToPrice[i].innerHTML);
+            }
+        }
+        totalPrice.innerHTML = sum;
+    }
+
     function addProductIdsToFrom() {
         var form=document.getElementById("orderSubmit");
         var checkBoxs=document.getElementsByName("proCheck");
         // console.log(checkBoxs.length);
+        var flag=false;
         for(var i=0; i<checkBoxs.length; i++) {
             // console.log("i");
             //添加选中的到表单中进行提交
@@ -31,9 +67,12 @@
                 newInput.style.display="none";
                 newInput.setAttribute("value", checkBoxs[i].value);
                 form.appendChild(newInput);
+                flag=true;
             }
         }
-        form.submit();
+        if(flag==true) {
+            form.submit();
+        }
     }
 </script>
 <%!
@@ -79,12 +118,12 @@
                         Product product = (Product) shoppingCard.get(i); %>
                 <tr>
 <%--                    通过Check的value来判断选择了哪一些--%>
-                    <td><input type="checkbox" name="proCheck" value="<%=i%>"/></td>
+                    <td><input type="checkbox" name="proCheck" value="<%=i%>" onclick="toCheck()"/></td>
                     <td><%=(i + 1)%>
                     </td>
                     <td><%=product.getName()%>
                     </td>
-                    <td><%=product.getPro_price()%>
+                    <td name="proToPrice"><%=product.getPro_price()%>
                     </td>
                     <td><%=product.getNum()%>
                     </td>
@@ -123,7 +162,7 @@
             </table>
         </div>
         <div id="cart_tt">
-            合计总金额：<span id="totalPrice" style="font-size:18px;color:#f60;"><%=totalPrice%></span>元</td>
+            合计总金额：<span id="totalPrice" style="font-size:18px;color:#f60;">0.0</span>元</td>
         </div>
         <div id="cart_lk">
             <a href="index.jsp">继续购物</a> |

@@ -1,5 +1,7 @@
 package com.example.javaWeb.entity;
 
+import java.util.Arrays;
+
 public class User {
     private Integer id;
     private String name;
@@ -76,5 +78,18 @@ public class User {
     public boolean equals(Object obj) {
         User b=(User) obj;
         return this.id.equals(b.id);
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", passwd='" + passwd + '\'' +
+                ", sex='" + sex + '\'' +
+                ", hobby=" + Arrays.toString(hobby) +
+                ", online=" + online +
+                ", balance=" + balance +
+                '}';
     }
 }
