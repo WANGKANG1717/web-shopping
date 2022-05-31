@@ -6,7 +6,9 @@
     <link rel="stylesheet" rev="stylesheet" href="css/global.css" type="text/css" media="all"/>
 </head>
 <body>
-
+<%
+    session.setAttribute("router", "/index.jsp");
+%>
 <div id="page">
     <div id="header">
         <jsp:include page="header.jsp"/>

@@ -11,10 +11,13 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>爱尚网扇品</title>
+    <title>未支付订单</title>
     <link rel="stylesheet" rev="stylesheet" href="css/global.css" type="text/css" media="all"/>
 </head>
 <body>
+<%
+    session.setAttribute("router", "/order.jsp");
+%>
 <%!
     Double totalPrice = 0.0;
 %>
@@ -95,6 +98,9 @@
         if(flag==true) {
             form.submit();
         }
+        else {
+            alert("您未选择要结算的订单，请重试！😒");
+        }
     }
 </script>
 <div id="page">
@@ -163,7 +169,11 @@
         </div>
         <div id="cart_lk">
             <a href="index.jsp">继续购物</a> |
-            <a style="cursor:pointer;" onclick="">查看已支付订单</a> |
+            <form method="post" action="order" style="display: inline" name="toPayOrder">
+                <input type="text" name="method" value="getPay" style="display: none">
+                <input type="text" style="display: none" name="userID" value="<%=user.getId()%>">
+                <a style="cursor:pointer;" onclick="document.toPayOrder.submit()">查看已支付订单</a>
+            </form> |
             <form method="post" action="order" style="display: inline" name="orderSubmit" id="orderSubmit">
                 <input type="text" name="method" value="pay" style="display: none">
                 <input type="text" style="display: none" name="userID" value="<%=user.getId()%>">

@@ -7,6 +7,9 @@
     <link rel="stylesheet" rev="stylesheet" href="css/global.css" type="text/css" media="all"/>
 </head>
 <body>
+<%
+    session.setAttribute("router", "/cart_view.jsp");
+%>
 <script language="JavaScript">
     function checkAll() {
         var checkAll=document.getElementById("selectAll");
@@ -41,12 +44,14 @@
     function alterTotalPrice() {
         var checkBoxs = document.getElementsByName("proCheck");
         var proToPrice = document.getElementsByName("proToPrice");
+        var proNum = document.getElementsByName("proNum");
         var totalPrice = document.getElementById("totalPrice");
         var sum = 0;
         for (var i = 0; i < checkBoxs.length; i++) {
             if (checkBoxs[i].checked == true) {
                 // console.log(proToPrice[i].innerHTML);
-                sum += parseFloat(proToPrice[i].innerHTML);
+                var price=parseFloat(proToPrice[i].innerHTML) * parseInt(proNum[i].innerHTML)
+                sum += price;
             }
         }
         totalPrice.innerHTML = sum;
@@ -72,6 +77,9 @@
         }
         if(flag==true) {
             form.submit();
+        }
+        else  {
+            alert("您未选择要提交订单的商品，请重试！😒");
         }
     }
 </script>
@@ -125,7 +133,7 @@
                     </td>
                     <td name="proToPrice"><%=product.getPro_price()%>
                     </td>
-                    <td><%=product.getNum()%>
+                    <td name="proNum"><%=product.getNum()%>
                     </td>
                     <td><%=product.getTotal_price()%>
                     </td>

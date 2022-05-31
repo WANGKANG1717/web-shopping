@@ -27,15 +27,14 @@
         }
     %>
     <br>
-    <a class="li"></a>
-    <img src="images/chat.png"/>&nbsp;<a target="_blank" href="https://kang17.xyz" style="cursor:hand">联系我们</a> <img
-        src="images/order.png"/>&nbsp;<a href="shoppingCart?userID=<%=user.getId()%>&method=get">购物车</a>
+    <img src="images/chat.png"/>&nbsp;<a target="_blank" href="https://kang17.xyz" style="cursor:hand">联 系 我</a>
+    <img src="images/order.png"/>&nbsp;<a href="shoppingCart?userID=<%=user.getId()%>&method=get">购 物 车</a>
 </div>
 
 <div id="headermenu">
     <ul id="menu">
         <li>
-            <a class="li" href="index.jsp"><img src="images/dh_1.png" border="0 "/>&nbsp;首页</a>
+            <a class="li" href="index.jsp"><img src="images/dh_1.png" border="0 "/>&nbsp;首 &nbsp;页</a>
         </li>
         <li>
             <form action="notice" method="post" name="getAllNotice">

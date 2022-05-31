@@ -51,8 +51,6 @@ public class MessageController extends HttpServlet {
         ArrayList<MessageInfo> messageInfoPair = messageService.getMessagePair(id);
         //
         request.getSession().setAttribute("messageInfoPair", messageInfoPair);
-        //移除上次的提交信息
-        request.getSession().setAttribute("messageAddInfo", null);
         try {
             request.getRequestDispatcher("/message_view.jsp").forward(request, response);
         } catch (Exception e) {

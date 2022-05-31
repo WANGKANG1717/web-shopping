@@ -15,6 +15,9 @@
     <link rel="stylesheet" rev="stylesheet" href="css/global.css" type="text/css" media="all"/>
 </head>
 <body>
+<%
+    session.setAttribute("router", "/person.jsp");
+%>
 <jsp:useBean id="user" scope="session" class="com.example.javaWeb.entity.User"/>
 <jsp:useBean id="updateMsg" scope="session" class="java.lang.String"/>
 <%!

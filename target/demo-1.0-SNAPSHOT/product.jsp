@@ -8,6 +8,9 @@
     <link rel="stylesheet" rev="stylesheet" href="css/global.css" type="text/css" media="all"/>
 </head>
 <body>
+<%
+    session.setAttribute("router", "/product.jsp");
+%>
 <jsp:useBean id="products" scope="session" class="java.util.ArrayList"/>
 <%!
     Integer Page;

@@ -17,6 +17,9 @@
     <link rel="stylesheet" rev="stylesheet" href="css/global.css" type="text/css" media="all"/>
 </head>
 <body>
+<%
+    session.setAttribute("router", "/message_view.jsp");
+%>
 <jsp:useBean id="messageInfoPair" scope="session" class="java.util.ArrayList"/>
 <%!
     MessageInfo message;

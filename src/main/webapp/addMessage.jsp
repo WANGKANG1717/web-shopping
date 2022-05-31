@@ -15,6 +15,21 @@
 <body>
 <jsp:useBean id="user" scope="session" class="com.example.javaWeb.entity.User"/>
 <jsp:useBean id="messageAddInfo" scope="session" class="java.lang.String"/>
+<%
+    session.setAttribute("router", "/addMessage.jsp");
+%>
+<script>
+    function formSubmit() {
+        var form=document.getElementById("messageSubmit");
+        var msgContent=document.getElementById("msgContent");
+        if(msgContent.value==null || msgContent.value=="") {
+            alert("内容为空，请写点东西！");
+        }
+        else {
+            form.submit();
+        }
+    }
+</script>
 <div id="page">
     <div id="header">
         <jsp:include page="header.jsp"/>
@@ -37,13 +52,14 @@
                 else if(messageAddInfo.equals("addFalse")) {
                     out.print("留言失败,请重试！");
                 }
+                session.removeAttribute("messageAddInfo");
             } else {
         %>
-            <form action="message" method="post">
+            <form action="message" method="post" id="messageSubmit">
                 <input type="text" name="method" value="add" style="display: none">
                 <input type="text" name="userID" value="<%=user.getId()%>" style="display: none">
-                <textarea name="msgContent" cols="93" rows="25" style="font-size: 15px; padding: 10px"></textarea><br>
-                <input type="submit" value="提交" style="float:right; margin-top: 10px">
+                <textarea name="msgContent" id="msgContent" cols="93" rows="25" style="font-size: 15px; padding: 10px"></textarea><br>
+                <input type="button" value="提交" style="float:right; margin-top: 10px" onclick="formSubmit()">
             </form>
         <% }} %>
     </div>

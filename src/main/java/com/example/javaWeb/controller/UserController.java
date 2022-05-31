@@ -16,8 +16,14 @@ import java.io.UnsupportedEncodingException;
 @WebServlet(name = "user", value = "/user")
 public class UserController extends HttpServlet {
     private UserService userService = new UserServiceImp();
+    private String router;
 
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        //统一处理路由跳转
+        router=(String) req.getSession().getAttribute("router");
+        if(router==null || router.equals("")) {
+            router="/index.jsp";
+        }
         /**
          * 获取参数识别用户想要请求的方法
          * 然后判断并调用对应的方法
@@ -57,9 +63,9 @@ public class UserController extends HttpServlet {
         request.setAttribute("outputMessage", info);
         try {
             if (info.equals("Success")) {
-                request.getRequestDispatcher("/index.jsp").forward(request, response);
+                request.getRequestDispatcher(router).forward(request, response);
             } else {
-                request.getRequestDispatcher("/login.jsp").forward(request, response);
+                request.getRequestDispatcher(router).forward(request, response);
             }
         } catch (ServletException e) {
             e.printStackTrace();
@@ -138,10 +144,9 @@ public class UserController extends HttpServlet {
         //
         userService.Exit(userID);
         try {
-            request.getRequestDispatcher("/index.jsp").forward(request, response);
-        } catch (ServletException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+            System.out.println(router+"router");
+            request.getRequestDispatcher(router).forward(request, response);
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

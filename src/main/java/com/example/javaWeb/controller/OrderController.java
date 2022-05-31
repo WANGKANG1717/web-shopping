@@ -5,6 +5,7 @@ import com.example.javaWeb.service.OrderService;
 import com.example.javaWeb.service.ShoppingCartService;
 import com.example.javaWeb.service.UserService;
 import com.example.javaWeb.service.imp.OrderServiceImp;
+import com.example.javaWeb.service.imp.ProductServiceImp;
 import com.example.javaWeb.service.imp.ShoppingCartServiceImp;
 import com.example.javaWeb.service.imp.UserServiceImp;
 
@@ -39,9 +40,13 @@ public class OrderController extends HttpServlet {
         } else if ("pay".equals(method)) {
             payOrders(req, resp);
         } else if ("getAll".equals(method)) {
-            getAllOrder(req, resp);
+            getUnPayOrder(req, resp);
         } else if ("delete".equals(method)) {
             deleteOrder(req, resp);
+        } else if ("addOne".equals(method)) {
+            addOneOrder(req, resp);
+        } else if ("getPay".equals(method)) {
+            getPayOrder(req, resp);
         }
     }
 
@@ -120,9 +125,9 @@ public class OrderController extends HttpServlet {
         }
     }
 
-    public void getAllOrder(HttpServletRequest request, HttpServletResponse response) {
+    public void getUnPayOrder(HttpServletRequest request, HttpServletResponse response) {
         response.setContentType("text/html;charset=utf-8");
-        System.out.println("getAllOrder");
+        System.out.println("getUnPayOrder");
         String userID= request.getParameter("userID");
         //数据返回
         ArrayList<Order> orders=orderService.getOrdersByUserId(userID, "0");
@@ -130,6 +135,21 @@ public class OrderController extends HttpServlet {
         //
         try {
             request.getRequestDispatcher("/order.jsp").forward(request, response);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void getPayOrder(HttpServletRequest request, HttpServletResponse response) {
+        response.setContentType("text/html;charset=utf-8");
+        System.out.println("getPayOrder");
+        String userID= request.getParameter("userID");
+        //数据返回
+        ArrayList<Order> orders=orderService.getOrdersByUserId(userID, "1");
+        request.getSession().setAttribute("orders", orders);
+        //
+        try {
+            request.getRequestDispatcher("/orderPay.jsp").forward(request, response);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -145,6 +165,32 @@ public class OrderController extends HttpServlet {
         //数据返回
         ArrayList<Order> orders=orderService.getOrdersByUserId(userID, "0");
         request.getSession().setAttribute("orders", orders);
+        try {
+            request.getRequestDispatcher("/order.jsp").forward(request, response);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void addOneOrder(HttpServletRequest request, HttpServletResponse response) {
+        response.setContentType("text/html;charset=utf-8");
+        System.out.println("addOneOrder");
+        String userID= request.getParameter("userID");
+        String productID= request.getParameter("productID");
+        String buyNum= request.getParameter("buyNum");
+        //
+        Product product = new ProductServiceImp().getProduct(Integer.valueOf(productID));
+        product.setNum(Integer.valueOf(buyNum));
+        //添加订单成功，删除购物车中内容
+        if (orderService.addOrder(userID, product)) {
+            shoppingCartService.ClearShoppingCart(userID, product.getId().toString());
+        } else {
+            System.out.println("添加失败->" + product.getId());
+        }
+        //数据返回
+        ArrayList<Order> orders=orderService.getOrdersByUserId(userID, "0");
+        request.getSession().setAttribute("orders", orders);
+        //
         try {
             request.getRequestDispatcher("/order.jsp").forward(request, response);
         } catch (Exception e) {

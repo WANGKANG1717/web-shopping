@@ -21,6 +21,9 @@
     <link rel="stylesheet" rev="stylesheet" href="css/global.css" type="text/css" media="all"/>
 </head>
 <body>
+<%
+    session.setAttribute("router", "/notice_view.jsp");
+%>
 <jsp:useBean id="notice" scope="session" class="com.example.javaWeb.entity.Notice"/>
 <div id="page">
     <div id="header">
