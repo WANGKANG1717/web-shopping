@@ -11,7 +11,7 @@
  Target Server Version : 80026
  File Encoding         : 65001
 
- Date: 30/05/2022 08:46:19
+ Date: 31/05/2022 20:58:56
 */
 
 SET NAMES utf8mb4;
@@ -31,7 +31,7 @@ CREATE TABLE `message`  (
   INDEX `uID`(`uID`) USING BTREE,
   INDEX `mID`(`mID`) USING BTREE,
   CONSTRAINT `uID` FOREIGN KEY (`uID`) REFERENCES `user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 1266 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1269 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of message
@@ -75,10 +75,8 @@ INSERT INTO `message` VALUES (1243, 1, NULL, '哈喽， 我是大厦是的\r\n\r
 INSERT INTO `message` VALUES (1244, 1, NULL, '大大撒旦\r\nsdadasdad\r\n\r\n\r\nasdasda\r\n\r\n\r\n\r\n\r\nasdasdasd\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nasdada\r\n测试多行', '2022-05-28 11:04:36');
 INSERT INTO `message` VALUES (1246, 1, NULL, '21312123\r\n啊实打实的\r\nadasdasd\r\n\r\n\r\nasdasd\r\n\r\n测试多行', '2022-05-28 11:09:14');
 INSERT INTO `message` VALUES (1248, 1, NULL, '大苏打撒旦\r\n\r\n\r\n\r\n\r\n啊实打实的\r\n\r\n\r\n\r\n成！！！！！！！！！', '2022-05-28 11:14:07');
-INSERT INTO `message` VALUES (1249, 1, NULL, '啊实打实的\r\n\r\n\r\n阿德飒飒\r\n\r\n\r\n111111111\r\n换行！！！！！！！！', '2022-05-28 11:15:20');
 INSERT INTO `message` VALUES (1250, 1, NULL, '    啊实打实的\r\n\r\n\r\n\r\n\r\n\r\n\r\n 阿德飒飒 111111111 \r\n\r\n\r\n\r\n\r\n\r\n换行！！！！！！！！', '2022-05-28 11:17:08');
 INSERT INTO `message` VALUES (1251, 1, NULL, '啊实打实大苏打2\r\n\r\n\r\n\r\n3212\r\n3123\r\n\r\n\r\n\r\n\r\n\r\n😒', '2022-05-28 11:25:14');
-INSERT INTO `message` VALUES (1252, 1, NULL, '啊大苏打的\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n1111', '2022-05-28 11:33:15');
 INSERT INTO `message` VALUES (1253, 1, NULL, '123123123\r\n\r\n\r\n\r\n\r\n12312312313', '2022-05-28 11:35:09');
 INSERT INTO `message` VALUES (1254, 1, NULL, '12312313123', '2022-05-28 11:37:49');
 INSERT INTO `message` VALUES (1255, 1, NULL, '3424', '2022-05-28 11:38:18');
@@ -90,6 +88,11 @@ INSERT INTO `message` VALUES (1263, 45, 1259, '111111111111111111111111111111111
 INSERT INTO `message` VALUES (1265, 45, 1264, '123123123', '2022-05-29 13:30:13');
 INSERT INTO `message` VALUES (1267, 1, 1265, 'w wq q q ', '2022-05-29 15:58:59');
 INSERT INTO `message` VALUES (1268, 45, 1251, '12312 v', '2022-05-29 16:00:13');
+INSERT INTO `message` VALUES (1270, 45, NULL, '1', '2022-05-31 20:22:11');
+INSERT INTO `message` VALUES (1271, 45, 1270, '12', '2022-05-31 20:24:26');
+INSERT INTO `message` VALUES (1272, 45, NULL, '121', '2022-05-31 20:25:51');
+INSERT INTO `message` VALUES (1273, 45, 1272, '1212', '2022-05-31 20:25:57');
+INSERT INTO `message` VALUES (1274, 13, NULL, '12121212', '2022-05-31 20:32:11');
 
 -- ----------------------------
 -- Table structure for notice
@@ -107,38 +110,39 @@ CREATE TABLE `notice`  (
 -- Records of notice
 -- ----------------------------
 INSERT INTO `notice` VALUES (1, '注意！！', '这只是一条测试，，，，，1hou后面还有内容111111111111111111222222222222222233333333333333333333333333333333333333333322555555555555555555555555550000000000000000000000000099999999999999999999999<br><br>                              WK-2022-5-25', '2022-05-25 16:33:42');
-INSERT INTO `notice` VALUES (2, '致本系统的使用者们', '欢迎来玩 kang17.xyz', '2022-05-25 16:33:46');
+INSERT INTO `notice` VALUES (2, 'Notice！', 'My bolg:kang17.xyz <br> 项目地址：https://gitee.com/purify_wang/web-shopping <br> © WK 1686617586@qq.com', '2022-05-25 16:33:46');
 INSERT INTO `notice` VALUES (3, '注意！！', '这只是一条测试，，，，，', '2022-05-25 16:33:42');
-INSERT INTO `notice` VALUES (4, '致本系统的使用者们', '欢迎来玩 kang17.xyz', '2022-05-25 16:33:46');
+INSERT INTO `notice` VALUES (4, 'Notice！', 'My bolg:kang17.xyz <br> 项目地址：https://gitee.com/purify_wang/web-shopping <br> © WK 1686617586@qq.com', '2022-05-25 16:33:46');
 INSERT INTO `notice` VALUES (5, '注意！！', '这只是一条测试，，，，，', '2022-05-25 16:33:42');
-INSERT INTO `notice` VALUES (6, '致本系统的使用者们', '欢迎来玩 kang17.xyz', '2022-05-25 16:33:46');
+INSERT INTO `notice` VALUES (6, 'Notice！', 'My bolg:kang17.xyz <br> 项目地址：https://gitee.com/purify_wang/web-shopping <br> © WK 1686617586@qq.com', '2022-05-25 16:33:46');
 INSERT INTO `notice` VALUES (7, '注意！！', '这只是一条测试，，，，，', '2022-05-25 16:33:42');
-INSERT INTO `notice` VALUES (8, '致本系统的使用者们', '欢迎来玩 kang17.xyz', '2022-05-25 16:33:46');
+INSERT INTO `notice` VALUES (8, 'Notice！', 'My bolg:kang17.xyz <br> 项目地址：https://gitee.com/purify_wang/web-shopping <br> © WK 1686617586@qq.com', '2022-05-25 16:33:46');
 INSERT INTO `notice` VALUES (9, '注意！！', '这只是一条测试，，，，，', '2022-05-25 16:33:42');
-INSERT INTO `notice` VALUES (10, '致本系统的使用者们', '欢迎来玩 kang17.xyz', '2022-05-25 16:33:46');
+INSERT INTO `notice` VALUES (10, 'Notice！', 'My bolg:kang17.xyz <br> 项目地址：https://gitee.com/purify_wang/web-shopping <br> © WK 1686617586@qq.com', '2022-05-25 16:33:46');
 INSERT INTO `notice` VALUES (11, '注意！！', '这只是一条测试，，，，，', '2022-05-25 16:33:42');
-INSERT INTO `notice` VALUES (12, '致本系统的使用者们', '欢迎来玩 kang17.xyz', '2022-05-25 16:33:46');
+INSERT INTO `notice` VALUES (12, 'Notice！', 'My bolg:kang17.xyz <br> 项目地址：https://gitee.com/purify_wang/web-shopping <br> © WK 1686617586@qq.com', '2022-05-25 16:33:46');
 INSERT INTO `notice` VALUES (13, '注意！！', '这只是一条测试，，，，，', '2022-05-25 16:33:42');
-INSERT INTO `notice` VALUES (14, '致本系统的使用者们', '欢迎来玩 kang17.xyz', '2022-05-25 16:33:46');
+INSERT INTO `notice` VALUES (14, 'Notice！', 'My bolg:kang17.xyz <br> 项目地址：https://gitee.com/purify_wang/web-shopping <br> © WK 1686617586@qq.com', '2022-05-25 16:33:46');
 INSERT INTO `notice` VALUES (15, '注意！！', '这只是一条测试，，，，，', '2022-05-25 16:33:42');
-INSERT INTO `notice` VALUES (16, '致本系统的使用者们', '欢迎来玩 kang17.xyz', '2022-05-25 16:33:46');
+INSERT INTO `notice` VALUES (16, 'Notice！', 'My bolg:kang17.xyz <br> 项目地址：https://gitee.com/purify_wang/web-shopping <br> © WK 1686617586@qq.com', '2022-05-25 16:33:46');
 INSERT INTO `notice` VALUES (17, '注意！！', '这只是一条测试，，，，，', '2022-05-25 16:33:42');
-INSERT INTO `notice` VALUES (18, '致本系统的使用者们', '欢迎来玩 kang17.xyz', '2022-05-25 16:33:46');
+INSERT INTO `notice` VALUES (18, 'Notice！', 'My bolg:kang17.xyz <br> 项目地址：https://gitee.com/purify_wang/web-shopping <br> © WK 1686617586@qq.com', '2022-05-25 16:33:46');
 INSERT INTO `notice` VALUES (19, '注意！！', '这只是一条测试，，，，，', '2022-05-25 16:33:42');
-INSERT INTO `notice` VALUES (20, '致本系统的使用者们', '欢迎来玩 kang17.xyz', '2022-05-25 16:33:46');
+INSERT INTO `notice` VALUES (20, 'Notice！', 'My bolg:kang17.xyz <br> 项目地址：https://gitee.com/purify_wang/web-shopping <br> © WK 1686617586@qq.com', '2022-05-25 16:33:46');
 INSERT INTO `notice` VALUES (21, '注意！！', '这只是一条测试，，，，，', '2022-05-25 16:33:42');
-INSERT INTO `notice` VALUES (22, '致本系统的使用者们', '欢迎来玩 kang17.xyz', '2022-05-25 16:33:46');
+INSERT INTO `notice` VALUES (22, 'Notice！', 'My bolg:kang17.xyz <br> 项目地址：https://gitee.com/purify_wang/web-shopping <br> © WK 1686617586@qq.com', '2022-05-25 16:33:46');
 INSERT INTO `notice` VALUES (23, '注意！！', '这只是一条测试，，，，，', '2022-05-25 16:33:42');
-INSERT INTO `notice` VALUES (24, '致本系统的使用者们', '欢迎来玩 kang17.xyz', '2022-05-25 16:33:46');
+INSERT INTO `notice` VALUES (24, 'Notice！', 'My bolg:kang17.xyz <br> 项目地址：https://gitee.com/purify_wang/web-shopping <br> © WK 1686617586@qq.com', '2022-05-25 16:33:46');
 
 -- ----------------------------
 -- Table structure for order
 -- ----------------------------
 DROP TABLE IF EXISTS `order`;
 CREATE TABLE `order`  (
-  `id` int NOT NULL AUTO_INCREMENT COMMENT '交易ID',
+  `id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '交易ID',
   `userID` int NOT NULL COMMENT '用户ID',
   `productID` int NOT NULL COMMENT '产品ID',
+  `productName` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `num` int NOT NULL DEFAULT 0 COMMENT '数量',
   `totalPrice` decimal(10, 2) NOT NULL DEFAULT 0.00 COMMENT '总价',
   `tradeTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '交易日期',
@@ -148,12 +152,34 @@ CREATE TABLE `order`  (
   INDEX `proID`(`productID`) USING BTREE,
   CONSTRAINT `proID` FOREIGN KEY (`productID`) REFERENCES `product` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `userID1` FOREIGN KEY (`userID`) REFERENCES `user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of order
 -- ----------------------------
-INSERT INTO `order` VALUES (1, 1, 1, 1, 10.12, '2022-05-29 16:52:04', 1);
+INSERT INTO `order` VALUES ('1531554288765579264', 45, 1, '油漆边双色龙骨扇_粉色', 1, 1.00, '2022-05-31 16:32:52', 1);
+INSERT INTO `order` VALUES ('1531554288903991296', 45, 3, '油漆边双色龙骨扇_蓝色', 1, 3.00, '2022-05-31 16:32:52', 1);
+INSERT INTO `order` VALUES ('1531556594395459584', 45, 1, '油漆边双色龙骨扇_粉色', 1, 1.00, '2022-05-31 16:42:01', 1);
+INSERT INTO `order` VALUES ('1531556594529677312', 45, 2, '油漆边双色龙骨扇_红色', 2, 4.00, '2022-05-31 16:42:01', 1);
+INSERT INTO `order` VALUES ('1531556594651312128', 45, 5, '短梢手绘折扇_梅花', 2, 1996.00, '2022-05-31 16:42:01', 1);
+INSERT INTO `order` VALUES ('1531556594777141248', 45, 6, '短梢手绘折扇_桃花', 2, 40.00, '2022-05-31 16:42:01', 1);
+INSERT INTO `order` VALUES ('1531560601432174592', 45, 1, '油漆边双色龙骨扇_粉色', 63, 63.00, '2022-05-31 16:57:57', 1);
+INSERT INTO `order` VALUES ('1531594112583114752', 45, 1, '油漆边双色龙骨扇_粉色', 7, 7.00, '2022-05-31 19:11:06', 1);
+INSERT INTO `order` VALUES ('1531594153167200256', 45, 1, '油漆边双色龙骨扇_粉色', 1, 1.00, '2022-05-31 19:11:16', 1);
+INSERT INTO `order` VALUES ('1531594153297223680', 45, 2, '油漆边双色龙骨扇_红色', 1, 2.00, '2022-05-31 19:11:16', 1);
+INSERT INTO `order` VALUES ('1531594938928111616', 45, 1, '油漆边双色龙骨扇_粉色', 4, 4.00, '2022-05-31 19:14:23', 1);
+INSERT INTO `order` VALUES ('1531594939062329344', 45, 2, '油漆边双色龙骨扇_红色', 1, 2.00, '2022-05-31 19:14:23', 1);
+INSERT INTO `order` VALUES ('1531594939209129984', 45, 5, '短梢手绘折扇_梅花', 3, 2994.00, '2022-05-31 19:14:23', 1);
+INSERT INTO `order` VALUES ('1531595127873118208', 45, 35, '35', 12, 216.00, '2022-05-31 19:15:08', 1);
+INSERT INTO `order` VALUES ('1531601255117922304', 45, 1, '油漆边双色龙骨扇_粉色', 1, 1.00, '2022-05-31 19:39:29', 0);
+INSERT INTO `order` VALUES ('1531601386538049536', 45, 2, '油漆边双色龙骨扇_红色', 1, 2.00, '2022-05-31 19:40:00', 0);
+INSERT INTO `order` VALUES ('1531601386655490048', 45, 3, '油漆边双色龙骨扇_蓝色', 1, 3.00, '2022-05-31 19:40:01', 0);
+INSERT INTO `order` VALUES ('1531601386781319168', 45, 35, '35', 1, 18.00, '2022-05-31 19:40:01', 0);
+INSERT INTO `order` VALUES ('1531601672941903872', 45, 5, '短梢手绘折扇_梅花', 2, 1996.00, '2022-05-31 19:41:09', 0);
+INSERT INTO `order` VALUES ('1531601673067732992', 45, 29, '29', 112, 2016.00, '2022-05-31 19:41:09', 0);
+INSERT INTO `order` VALUES ('1531614564961525760', 13, 1, '油漆边双色龙骨扇_粉色', 1, 1.00, '2022-05-31 20:32:22', 0);
+INSERT INTO `order` VALUES ('1531614565083160576', 13, 5, '短梢手绘折扇_梅花', 1, 998.00, '2022-05-31 20:32:23', 0);
+INSERT INTO `order` VALUES ('1531614565192212480', 13, 6, '短梢手绘折扇_桃花', 1, 20.00, '2022-05-31 20:32:23', 0);
 
 -- ----------------------------
 -- Table structure for product
@@ -235,15 +261,14 @@ CREATE TABLE `shoppingcart`  (
 -- ----------------------------
 -- Records of shoppingcart
 -- ----------------------------
-INSERT INTO `shoppingcart` VALUES (1, 2, 1);
-INSERT INTO `shoppingcart` VALUES (1, 14, 1);
+INSERT INTO `shoppingcart` VALUES (1, 1, 6);
+INSERT INTO `shoppingcart` VALUES (1, 2, 2);
 INSERT INTO `shoppingcart` VALUES (19, 2, 1);
 INSERT INTO `shoppingcart` VALUES (44, 1, 225);
 INSERT INTO `shoppingcart` VALUES (44, 2, 1);
 INSERT INTO `shoppingcart` VALUES (44, 3, 112);
 INSERT INTO `shoppingcart` VALUES (44, 28, 112);
-INSERT INTO `shoppingcart` VALUES (45, 4, 1);
-INSERT INTO `shoppingcart` VALUES (45, 6, 1);
+INSERT INTO `shoppingcart` VALUES (45, 1, 2);
 
 -- ----------------------------
 -- Table structure for user
@@ -256,32 +281,34 @@ CREATE TABLE `user`  (
   `sex` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '性别',
   `hobby` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '爱好',
   `online` int NOT NULL DEFAULT 0 COMMENT '0下线 1在线',
-  `balance` decimal(10, 2) NULL DEFAULT 0.00 COMMENT '余额',
+  `balance` decimal(10, 2) NULL DEFAULT 1000.00 COMMENT '余额',
   `headpic` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 49 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 51 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES (1, 'admin', '123456', '男', '爬山,钓鱼', 1, 10000.00, '');
+INSERT INTO `user` VALUES (1, 'admin', '123456', '男', '爬山,钓鱼', 0, 10000.00, '');
 INSERT INTO `user` VALUES (2, 'wk', '654321', '男', '爬山,钓鱼', 0, 10000.00, NULL);
 INSERT INTO `user` VALUES (13, '12', '12', '男', '爬山,钓鱼', 0, 10000.00, NULL);
 INSERT INTO `user` VALUES (15, '1212', '121212', '男', '爬山,钓鱼', 1, 10000.00, NULL);
 INSERT INTO `user` VALUES (17, '1231231', '123123', '女', '爬山,钓鱼', 1, 10000.00, NULL);
 INSERT INTO `user` VALUES (18, '11111', '123123', '男', '钓鱼', 0, 10000.00, NULL);
 INSERT INTO `user` VALUES (19, '121212', '121212', '男', '爬山', 0, 1230.00, NULL);
-INSERT INTO `user` VALUES (20, '123123', '123123', '男', '爬山', 1, 0.00, NULL);
-INSERT INTO `user` VALUES (21, '王康', '123123', '女', '爬山,钓鱼', 1, 0.00, NULL);
-INSERT INTO `user` VALUES (22, '啊哈哈哈', '123', '男', '爬山,钓鱼', 0, 0.00, NULL);
-INSERT INTO `user` VALUES (42, '12aaa', '12', '男', '爬山,钓鱼', 1, 0.00, NULL);
-INSERT INTO `user` VALUES (43, 'aaa', 'aaa', '男', '爬山', 0, 0.00, NULL);
-INSERT INTO `user` VALUES (44, '王庆康', '123', '男', '爬山', 1, 0.00, NULL);
-INSERT INTO `user` VALUES (45, '1', '1', '男', '爬山', 1, 0.00, NULL);
-INSERT INTO `user` VALUES (46, 'wang某人', '1', '男', '爬山', 1, 0.00, NULL);
-INSERT INTO `user` VALUES (47, '123', '123', '男', '爬山,钓鱼', 1, 0.00, NULL);
-INSERT INTO `user` VALUES (48, '123', '123', '男', '爬山', 0, 0.00, NULL);
-INSERT INTO `user` VALUES (49, 'wangkang', '123', '男', '爬山', 0, 0.00, NULL);
-INSERT INTO `user` VALUES (50, '123', '123', '男', '爬山', 0, 0.00, NULL);
+INSERT INTO `user` VALUES (20, '123123', '123123', '男', '爬山', 1, 10000.00, NULL);
+INSERT INTO `user` VALUES (21, '王康', '123123', '女', '爬山,钓鱼', 1, 10000.00, NULL);
+INSERT INTO `user` VALUES (22, '啊哈哈哈', '123', '男', '爬山,钓鱼', 0, 10000.00, NULL);
+INSERT INTO `user` VALUES (42, '12aaa', '12', '男', '爬山,钓鱼', 1, 10000.00, NULL);
+INSERT INTO `user` VALUES (43, 'aaa', 'aaa', '男', '爬山', 0, 10000.00, NULL);
+INSERT INTO `user` VALUES (44, '王庆康', '123', '男', '爬山', 1, 10000.00, NULL);
+INSERT INTO `user` VALUES (45, '1', '1', '男', '爬山', 0, 59.00, NULL);
+INSERT INTO `user` VALUES (46, 'wang某人', '1', '男', '爬山', 1, 10000.00, NULL);
+INSERT INTO `user` VALUES (47, '123', '123', '男', '爬山,钓鱼', 1, 10000.00, NULL);
+INSERT INTO `user` VALUES (48, '123', '123', '男', '爬山', 0, 10000.00, NULL);
+INSERT INTO `user` VALUES (49, 'wangkang', '123', '男', '爬山', 0, 10000.00, NULL);
+INSERT INTO `user` VALUES (50, '123', '123', '男', '爬山', 0, 10000.00, NULL);
+INSERT INTO `user` VALUES (51, '12', '12', '男', '爬山', 0, 0.00, NULL);
+INSERT INTO `user` VALUES (52, '1234', '12', '男', '爬山', 1, 1000.00, NULL);
 
 SET FOREIGN_KEY_CHECKS = 1;

@@ -122,6 +122,14 @@
             <h3>您的订单还是空的，</h3>
             <h3><a href="index.jsp">赶紧行动吧！</a></h3>
         </div>
+        <div id="cart_lk">
+            <a href="index.jsp">继续购物</a> |
+            <form method="post" action="order" style="display: inline" name="toPayOrder">
+                <input type="text" name="method" value="getPay" style="display: none">
+                <input type="text" style="display: none" name="userID" value="<%=user.getId()%>">
+                <a style="cursor:pointer;" onclick="document.toPayOrder.submit()">查看已支付订单</a>
+            </form>
+        </div>
         <% } else { %>
         <img src="images/shopping_card.gif"/>
         <div id="cart_tb">
