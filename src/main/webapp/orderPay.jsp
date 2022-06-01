@@ -34,7 +34,7 @@
         <% } else if (orders == null || orders.size() == 0) {
         %>
         <div id="empty">
-            <h3>您的未有任何支付订单，快去买买买！</h3>
+            <h3>您未有任何已支付订单！</h3>
             <h3><a href="index.jsp">赶紧行动吧！</a></h3>
         </div>
         <% } else { %>
