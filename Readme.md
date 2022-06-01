@@ -1,3 +1,5 @@
+## 项目地址：https://gitee.com/purify_wang/web-shopping
+
 # WebShopping
 
 - 开发工具：IDEA
