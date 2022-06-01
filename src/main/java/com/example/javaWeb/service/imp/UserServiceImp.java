@@ -64,7 +64,6 @@ public class UserServiceImp implements UserService {
             }
             userOld.setSex(user.getSex());
             userOld.setHobby(user.getHobby());
-            userOld.setBalance(user.getBalance());
             return userDao.update(userOld);
         }
     }

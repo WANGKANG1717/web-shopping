@@ -55,7 +55,7 @@
                     if(updateMsg!=null && !updateMsg.equals("")) {
                         out.print(updateMsg);
                     }
-                    updateMsg=null;
+                    session.removeAttribute("updateMsg");
                 %>
                 <form action="user" method="post">
                     <input type="hidden" name="method" value="update">
