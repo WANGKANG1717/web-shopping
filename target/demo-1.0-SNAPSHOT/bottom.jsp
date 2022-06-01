@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<div style="border: black solid">
+<div>
     <div style="font-size: 14px;">爱尚网 &copy;2011&nbsp;&nbsp;&nbsp;&nbsp;WK</div>
     <div style="font-size: 13px">
         <label>地址</label>：浙江 杭州;&nbsp;&nbsp;&nbsp;&nbsp;
