@@ -27,6 +27,7 @@
                             if(message!=null && !message.equals("")){
                                 out.print(message);
                             }
+                            session.removeAttribute("outputMessage");
                         %>
                     </span><br>
                     用户名:

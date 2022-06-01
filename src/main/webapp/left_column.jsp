@@ -14,6 +14,12 @@
             <div id="left_login">
                 <img src="images/vip_logo.png"/><br><br>
                 <%
+                    String message=(String) request.getAttribute("outputMessage");
+                    if(message!=null && !message.equals("")){
+                        out.print("<a style='font-size: 10px; color: red'>"+message+"</a>");
+                    }
+                    session.removeAttribute("outputMessage");
+                    //
                     String userName = null;
                     if (user != null) {
                         userName = user.getName();
