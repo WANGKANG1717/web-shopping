@@ -5,7 +5,9 @@
     <title>用户登录</title>
     <link rel="stylesheet" rev="stylesheet" href="css/global.css" type="text/css" media="all"/>
 </head>
-
+<%
+    session.setAttribute("router", "/login.jsp");
+%>
 <body>
 <div id="page">
     <div id="header">

@@ -61,7 +61,12 @@ public class UserController extends HttpServlet {
             request.setAttribute("outputMessage", info);
         }
         try {
+            if("/login.jsp".equals(router) && info==null) {
+                request.getRequestDispatcher("/index.jsp").forward(request, response);
+            }
+            else {
                 request.getRequestDispatcher(router).forward(request, response);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
