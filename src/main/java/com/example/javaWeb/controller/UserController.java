@@ -53,23 +53,16 @@ public class UserController extends HttpServlet {
          */
         User user = userService.Login(userName, passwd);
         if (user != null) {
-            info = "Success";
             HttpSession session = request.getSession();
             session.setAttribute("user", user);
         } else {
             info = "用户名或密码错误";
             System.out.println("验证失败");
+            request.setAttribute("outputMessage", info);
         }
-        request.setAttribute("outputMessage", info);
         try {
-            if (info.equals("Success")) {
                 request.getRequestDispatcher(router).forward(request, response);
-            } else {
-                request.getRequestDispatcher(router).forward(request, response);
-            }
-        } catch (ServletException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
